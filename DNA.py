@@ -1,18 +1,6 @@
 def dna(s):
-    dna_dict = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
-
-    for char in s:
-        if char == 'A':
-            dna_dict['A'] += 1
-        elif char == 'C':
-            dna_dict['C'] += 1
-        elif char == 'G':
-            dna_dict['G'] += 1
-        elif char == 'T':
-            dna_dict['T'] += 1
-
-    return (str(dna_dict['A']) + ' ' + str(dna_dict['C']) + ' ' +
-            str(dna_dict['G']) + ' ' + str(dna_dict['T']))
+    return (str(s.count('A')) + ' ' + str(s.count('C')) + ' ' +
+            str(s.count('G')) + ' ' + str(s.count('T')))
 
 
 def dna_with_file(filename):
