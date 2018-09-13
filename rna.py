@@ -18,7 +18,3 @@ def rna_tester():
 if __name__ == "__main__":
     rna_tester()
     print(rna_with_file('rosalind_rna.txt'))
-
-
-
-
