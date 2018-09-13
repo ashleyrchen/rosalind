@@ -1,26 +1,17 @@
 def revc(s):
-    s = map(lambda x: revc_fun(x), s)
-    lst = list(s)
+    lst = list(map(lambda x: revc_fun(x), s))
     lst.reverse()
     return ''.join(lst)
 
 
 def revc_fun(char):
-    if char == 'A':
-        return 'T'
-    elif char == 'T':
-        return 'A'
-    elif char == 'C':
-        return 'G'
-    elif char == 'G':
-        return 'C'
-    else:
-        return char
+    conversion = dict({'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'})
+    return conversion[char]
 
 
 def revc_with_file(filename):
     with open(filename, 'r') as file:
-        data = file.read()
+        data = file.read().strip()
         return revc(str(data))
 
 
@@ -31,6 +22,5 @@ def revc_tester():
 
 
 if __name__ == "__main__":
-    # print(revc('GTCA'))
     revc_tester()
-    #print(revc_with_file('rosalind_revc.txt'))
+    print(revc_with_file('rosalind_revc.txt'))
